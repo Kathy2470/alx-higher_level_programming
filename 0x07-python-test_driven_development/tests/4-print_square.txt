@@ -1,0 +1,36 @@
+description: Testing the print_square function
+
+# Test Case 1
+input: 4
+expected_output:
+####
+####
+####
+####
+
+# Test Case 2
+input: 10
+expected_output:
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# Test Case 3
+input: 0
+expected_output:  (empty)
+
+# Test Case 4
+input: 1
+expected_output:
+#
+
+# Test Case 5 - Testing negative size
+input: -1
+expected_output: "size must be >= 0"

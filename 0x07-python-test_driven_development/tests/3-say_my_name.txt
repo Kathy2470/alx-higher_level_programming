@@ -1,0 +1,21 @@
+description: Testing the say_my_name function
+
+# Test Case 1
+input: "John", "Smith"
+expected_output: "My name is John Smith"
+
+# Test Case 2
+input: "Walter", "White"
+expected_output: "My name is Walter White"
+
+# Test Case 3
+input: "Bob"
+expected_output: "My name is Bob"
+
+# Test Case 4 - Testing non-string first_name
+input: 12, "White"
+expected_output: "first_name must be a string"
+
+# Test Case 5 - Testing non-string last_name
+input: "John", 42
+expected_output: "last_name must be a string"
