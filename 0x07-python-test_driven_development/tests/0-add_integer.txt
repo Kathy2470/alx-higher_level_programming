@@ -1,25 +1,29 @@
-description: Testing the add_integer function
+#!/usr/bin/python3
+"""
+This is a text file to test the 'add_integer' function.
 
-# Test Case 1
-input: 1, 2
-expected_output: 3
+To use, run: python3 -m doctest -v ./tests/0-add_integer.txt
+"""
 
-# Test Case 2
-input: 100, -2
-expected_output: 98  # Default value for b
+# Test cases
+>>> add_integer(1, 2)
+3
 
-# Test Case 3
-input: 2
-expected_output: 100  # Default value for b
+>>> add_integer(100, -2)
+98
 
-# Test Case 4
-input: 100.3, -2
-expected_output: 98  # b is cast to an integer
+>>> add_integer(2)
+100
 
-# Test Case 5
-input: 4, "School"
-expected_output: "b must be an integer"  # Exception message
+>>> add_integer(100.3, -2)
+98
 
-# Test Case 6
-input: None
-expected_output: "a must be an integer"  # Exception message
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
