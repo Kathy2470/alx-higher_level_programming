@@ -9,6 +9,7 @@ Returns an integer: the addition of a and b
 You are not allowed to import any module
 """
 
+# Update the docstring to include the default value for b
 def add_integer(a, b=98):
     """
     Adds two integers.
@@ -22,7 +23,7 @@ def add_integer(a, b=98):
 
     Raises:
         TypeError: If a or b is not an integer or float.
-		  If raising TypeError, the error message should be  "a must be an integer" or "b must be an integer".
+                  If raising TypeError, the error message should be "a must be an integer" or "b must be an integer".
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
