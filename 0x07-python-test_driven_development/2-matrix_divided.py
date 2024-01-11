@@ -1,37 +1,31 @@
-"""
-This is a doctest file for the 'matrix_divided' function.
+def matrix_divided(matrix, div):
+    """
+    Divide all elements of a matrix by a given number.
 
->>> matrix_divided([[1, 2, 3], [4, 5, 6]], 2)
-[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+    Args:
+        matrix (list of lists): The input matrix (list of lists of integers or floats).
+        div (int or float): The number to divide the elements of the matrix by.
 
->>> matrix_divided([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]], 2.5)
-[[0.4, 0.8, 1.2], [1.6, 2.0, 2.4]]
+    Returns:
+        list of lists: A new matrix with elements rounded to 2 decimal places.
 
->>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0.5)
-[[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+    Raises:
+        TypeError: If matrix is not a list of lists of integers/floats,
+                   or if each row of the matrix does not have the same size,
+                   or if div is not a number.
+        ZeroDivisionError: If div is equal to 0.
+    """
+    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
->>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
-Traceback (most recent call last):
-    ...
-ZeroDivisionError: division by zero
+    if not matrix or any(not row or len(row) != len(matrix[0]) for row in matrix):
+        raise TypeError("Each row of the matrix must have the same size")
 
->>> matrix_divided([[1, 2, 3], [4, 5, 6]], '2')
-Traceback (most recent call last):
-    ...
-TypeError: div must be a number
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
 
->>> matrix_divided([[1, 2, 3], [4, 5, 6]], [2])
-Traceback (most recent call last):
-    ...
-TypeError: div must be a number
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
 
->>> matrix_divided([[1, 2, 3], [4, 5]], 2)
-Traceback (most recent call last):
-    ...
-TypeError: Each row of the matrix must have the same size
-
->>> matrix_divided('not_a_matrix', 2)
-Traceback (most recent call last):
-    ...
-TypeError: matrix must be a matrix (list of lists) of integers/floats
-"""
+    result_matrix = [[round(element / div, 2) for element in row] for row in matrix]
+    return (result_matrix)
