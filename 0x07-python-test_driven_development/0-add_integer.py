@@ -9,7 +9,6 @@ Returns an integer: the addition of a and b
 You are not allowed to import any module
 """
 
-# Update the docstring to include the default value for b
 def add_integer(a, b=98):
     """
     Adds two integers.
@@ -33,4 +32,4 @@ def add_integer(a, b=98):
     a = int(a)
     b = int(b)
 
-    return (a + b)
+    return a + b
