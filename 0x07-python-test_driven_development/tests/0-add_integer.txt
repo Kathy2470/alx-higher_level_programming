@@ -1,8 +1,4 @@
-"""
-This is a text file to test the 'add_integer' function.
-
-To use, run: python3 -m doctest -v ./tests/0-add_integer.txt
-"""
+>>> add_integer = __import__('0.add_integer').add_integer
 
 >>> add_integer(1, 2)
 3
