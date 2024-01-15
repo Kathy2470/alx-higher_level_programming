@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 
-class BaseGeometry:
-    """
-    BaseGeometry class with a public instance method area().
-    """
+BaseGeometry = __import__('6-base_geometry').BaseGeometry
 
-    def area(self):
-        """
-        Raises an Exception with the message 'area() is not implemented'.
-        """
-        raise Exception("area() is not implemented")
+bg = BaseGeometry()
+
+try:
+    print(bg.area())
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
