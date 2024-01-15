@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+"""Defines a class Rectangle that inherits from BaseGeometry."""
+
 
 class BaseGeometry:
-    """
-    BaseGeometry class with public instance methods area() and integer_validator().
-    """
+    """Represent a rectangle using BaseGeometry."""
 
     def area(self):
         """
@@ -14,8 +14,6 @@ class BaseGeometry:
     def integer_validator(self, name, value):
         """
         Validates the value:
-        - Raises a TypeError if value is not an integer with the message '<name> must be an integer'.
-        - Raises a ValueError if value is less than or equal to 0 with the message '<name> must be greater than 0'.
 
         Args:
         - name: A string representing the name of the value.
