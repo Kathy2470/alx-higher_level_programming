@@ -1,21 +1,17 @@
 #!/usr/bin/python3
+"""Defines a class Rectangle that inherits from BaseGeometry."""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 
 class BaseGeometry:
-    """
-    BaseGeometry class with public instance methods area() and integer_validator().
-    """
+    """ Represent a rectangle using BaseGeometry."""
 
     def area(self):
-        """
-        Raises an Exception with the message 'area() is not implemented'.
-        """
+        """ Raises an Exception with the messages'."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """
-        Validates the value:
-        - Raises a TypeError if value is not an integer with the message '<name> must be an integer'.
-        - Raises a ValueError if value is less than or equal to 0 with the message '<name> must be greater than 0'.
+        """ Validates the value
 
         Args:
         - name: A string representing the name of the value.
@@ -29,13 +25,10 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """
-    Rectangle class that inherits from BaseGeometry.
-    """
+    """ Rectangle class that inherits from BaseGeometry."""
 
     def __init__(self, width, height):
-        """
-        Initializes a Rectangle instance with width and height.
+        """ Initializes a Rectangle instance with width and height.
 
         Args:
         - width: The width of the rectangle.
@@ -47,8 +40,7 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
-        """
-        Computes and returns the area of the rectangle.
+        """ Computes and returns the area of the rectangle.
 
         Returns:
         - The area of the rectangle (width * height).
@@ -56,9 +48,7 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        """
-        Returns a string representation of the rectangle in the format '[Rectangle] <width>/<height>'.
-
+        """ Returns a string representation of the rectangle.
         Returns:
         - A string representation of the rectangle.
         """
