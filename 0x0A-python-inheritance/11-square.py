@@ -1,21 +1,17 @@
 #!/usr/bin/python3
+"""Defines a Rectangle subclass square."""
+
 
 class BaseGeometry:
-    """
-    BaseGeometry class with public instance methods area() and integer_validator().
-    """
+    """Represents a square."""
 
     def area(self):
-        """
-        Raises an Exception with the message 'area() is not implemented'.
-        """
+        """ Raises an Exception with the message."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
-        Validates the value:
-        - Raises a TypeError if value is not an integer with the message '<name> must be an integer'.
-        - Raises a ValueError if value is less than or equal to 0 with the message '<name> must be greater than 0'.
+        Validates the value.
 
         Args:
         - name: A string representing the name of the value.
@@ -57,8 +53,7 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle in the format '[Rectangle] <width>/<height>'.
-
+        Returns a string representation of the rectangle.
         Returns:
         - A string representation of the rectangle.
         """
@@ -82,8 +77,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """
-        Returns a string representation of the square in the format '[Square] <size>/<size>'.
-
+        Returns a string representation of the square.
         Returns:
         - A string representation of the square.
         """
