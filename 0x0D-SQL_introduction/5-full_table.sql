@@ -1,8 +1,9 @@
 -- Script: print_table_description.sql
 -- Description: Prints the full description of the table first_table from the specified database.
 
-USE $1;
+USE `hbtn_0c_0`;
 
-SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_KEY
-FROM information_schema.columns
-WHERE table_schema = DATABASE() AND table_name = 'first_table';
+SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_KEY, COLUMN_DEFAULT, EXTRA
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'hbtn_0c_0'
+AND TABLE_NAME = 'first_table';
