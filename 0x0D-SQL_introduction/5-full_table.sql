@@ -1,5 +1,5 @@
--- Script: print_table_description.sql
--- Description: Prints the full description of the table first_table from the specified database.
+-- Script: describe_table.sql
+-- Description: Prints the full description of the table first_table from the database hbtn_0c_0
 
 USE `hbtn_0c_0`;
 
