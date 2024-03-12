@@ -11,7 +11,7 @@ class Rectangle {
     }
   }
 
-  print() {
+  print () {
     if (this.width !== undefined && this.height !== undefined) {
       for (let i = 0; i < this.height; i++) {
         console.log('X'.repeat(this.width));
@@ -19,11 +19,11 @@ class Rectangle {
     }
   }
 
-  rotate() {
+  rotate () {
     [this.width, this.height] = [this.height, this.width];
   }
 
-  double() {
+  double () {
     this.width *= 2;
     this.height *= 2;
   }
