@@ -2,23 +2,53 @@
 import MySQLdb
 import sys
 
+def create_database(username, password, database):
+    try:
+        db = MySQLdb.connect(host='localhost',
+                             port=3306,
+                             user=username,
+                             passwd=password)
+        cursor = db.cursor()
+
+        cursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(database))
+
+        cursor.close()
+        db.close()
+    except MySQLdb.Error as e:
+        print("MySQL Error: ", e)
+        sys.exit(1)
+
+def get_states(username, password, database):
+    try:
+        db = MySQLdb.connect(host='localhost',
+                             port=3306,
+                             user=username,
+                             passwd=password,
+                             db=database)
+        cursor = db.cursor()
+
+        cursor.execute("SELECT * FROM states ORDER BY id")
+
+        results = cursor.fetchall()
+
+        for row in results:
+            print(row)
+
+        cursor.close()
+        db.close()
+    except MySQLdb.Error as e:
+        print("MySQL Error: ", e)
+        sys.exit(1)
+
 if __name__ == "__main__":
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
-    )
+    if len(sys.argv) != 4:
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+        sys.exit(1)
 
-    cur = db.cursor()
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    create_database(username, password, database)
 
-    rows = cur.fetchall()
-
-    for row in rows:
-        print(row)
-
-    cur.close()
-    db.close()
+    get_states(username, password, database)
