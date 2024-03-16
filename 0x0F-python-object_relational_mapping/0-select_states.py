@@ -2,23 +2,7 @@
 import MySQLdb
 import sys
 
-def create_database(username, password, database):
-    try:
-        db = MySQLdb.connect(host='localhost',
-                             port=3306,
-                             user=username,
-                             passwd=password)
-        cursor = db.cursor()
-
-        cursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(database))
-
-        cursor.close()
-        db.close()
-    except MySQLdb.Error as e:
-        print("MySQL Error: ", e)
-        sys.exit(1)
-
-def get_states(username, password, database):
+def select_states(username, password, database):
     try:
         db = MySQLdb.connect(host='localhost',
                              port=3306,
@@ -49,6 +33,4 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    create_database(username, password, database)
-
-    get_states(username, password, database)
+    select_states(username, password, database)
