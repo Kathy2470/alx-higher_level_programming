@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """
-Script to list all states with a name starting with 'N' (upper N) from the database hbtn_0e_0_usa.
+Script to list all states starting with 'N' from database hbtn_0e_0_usa.
 """
 
 import MySQLdb
 import sys
 
+
 def get_states(username, password, database):
     """
-    Connects to the MySQL server and retrieves states with names starting with 'N' from the specified database.
+    Connects to MySQL server and retrieves states with names starting with 'N' from database.
 
     Args:
         username (str): MySQL username.
@@ -37,6 +38,7 @@ def get_states(username, password, database):
     except MySQLdb.Error as e:
         print("MySQL Error: ", e)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
