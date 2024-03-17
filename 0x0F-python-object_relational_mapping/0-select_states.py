@@ -9,7 +9,7 @@ import sys
 
 def get_states(username, password, database):
     """
-    Connects to the MySQL server and retrieves all states from the specified database.
+    Connects to MySQL server and retrieves all states from specified database.
 
     Args:
         username (str): MySQL username.
@@ -38,6 +38,7 @@ def get_states(username, password, database):
     except MySQLdb.Error as e:
         print("MySQL Error: ", e)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
