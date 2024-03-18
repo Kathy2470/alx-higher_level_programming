@@ -10,3 +10,8 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
+
+
+connection_string = 'mysql://kathy2470:kathylenemukisa@localhost/hbtn_0e_6_usa'
+engine + create_engine(connection_string)
+Base.metadata.create_all(engine)
