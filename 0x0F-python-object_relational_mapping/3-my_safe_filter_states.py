@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """
-Script to display all values in the states table of hbtn_0e_0_usa where name matches the provided argument.
+Script to list states from the database hbtn_0e_0_usa that match a given name, safely.
 """
 
 import MySQLdb
 import sys
 
-def search_states(username, password, database, state_name):
+
+def safe_filter_states(username, password, database, state_name):
     """
-    Connects to the MySQL server and searches for states with the provided name in the specified database.
+    Connects to the MySQL server and retrieves states matching the given name.
 
     Args:
         username (str): MySQL username.
@@ -40,6 +41,7 @@ def search_states(username, password, database, state_name):
         print("MySQL Error: ", e)
         sys.exit(1)
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 5:
         print("Usage: {} <username> <password> <database> <state_name>".format(sys.argv[0]))
@@ -50,7 +52,7 @@ if __name__ == "__main__":
     database = sys.argv[3]
     state_name = sys.argv[4]
 
-    states = search_states(username, password, database, state_name)
+    states = safe_filter_states(username, password, database, state_name)
 
     for row in states:
         print(row)
